@@ -115,7 +115,7 @@ Using the Reverse Engineer feature of MySQL, I was able to create the ER Diagram
 
 The scripts used to alter the table constraints and make modifications can be found [sql_script folder](./SQL%20Script%20for%20database%20project.sql)
 
-## 🟠 Creating Views, Triggers, and Stored Procedures
+## Creating Views, Triggers, and Stored Procedures
 ---
 
 At this point, the database for the business has been setup. The business owner made three requests.
@@ -160,33 +160,21 @@ CALL getRestock_products("che");
 
 ```
 
-The views and triggers created can created to help the business can be found in the scripts.
-
-## 🟠 User Management and Privileges
-
-![](https://github.com/Ebuka456/Database-Design/blob/main/Project%20Create%20a%20Database/Screenshot%202023-08-01%20071623.png)
-
+## User Management and Privileges
 The business Owner requested I created two users; a Database Administrator and a Data Analyst and grant them some privileges on the database.
 
 I Created two Users and give them access to the database. The first user, "TuckerReilly", will be a DBA, and should get full database administrator privileges. The second user, "EllaBrody" is an Analyst and only need read access.
 
 Designing a database also entails User Management, Granting and Revoking User privileges. This would be done using SQL commands GRANT and REVOKE.
 
-
-## 🟠 Database Backup
+## Database Backup
 The primary purpose of backing up a database is to create a duplicate copy of its data and structure at a specific point in time. This process involves making a snapshot of the entire database or selected portions of it, and storing this copy in a secure location.
 
 This database was backed up on a Hard Drive using MySQL local instance Data Export feature.
 
-## 🟠 Relevance to Business Owners
+## Relevance to Business Owners
 Having a database helps the business run smoothly and efficiently. It stores all the important data in one place, making it easy to find what we need whenever we need it. It's like having everything neatly sorted and labeled, so we can access information with just a few clicks.
 
 A database also helps the business make better decisions. It can show us which products are selling well, who our most loyal customers are, and how much money we're making. Armed with this information, we can plan and strategize to grow the business and keep customers happy.
 
 Moreover, a database keeps data safe and secure. It makes sure only the right people can access sensitive information and prevents unauthorized access. Just like we lock our important documents in a safe, a database acts as a digital safe for our business data.
-
----
-
-![](https://github.com/Ebuka456/Database-Design/blob/main/Project%20Create%20a%20Database/thank%20you.gif)
-
-Thank you for Reading!
