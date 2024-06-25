@@ -100,10 +100,8 @@ After Normalizing the table, The table was sub-divided into the following entiti
 - `Orders`
 - `Employees`
 
-## Database Diagram Design and Table Alterations
+## Data Modeling
 The next step is to design an ERD. This diagram use symbols to represent entities, attributes, and relationships, which help to illustrate the relationships between the entities in the database. 
-
-Using the Reverse Engineer feature of MySQL, I was able to create the ER Diagram below
 
 ![Database Schema](./image_file/Database%20ERD%20Model.png)
 
@@ -155,4 +153,4 @@ Designing a database also entails User Management, Granting and Revoking User pr
 ## Database Backup
 The primary purpose of backing up a database is to create a duplicate copy of its data and structure at a specific point in time. This process involves making a snapshot of the entire database or selected portions of it, and storing this copy in a secure location.
 
-This database was backed up on a Hard Drive using MySQL local instance Data Export feature.
+This database was backed up on a Hard Drive using MySQL local instance Data Export feature or using mysqldump command.
