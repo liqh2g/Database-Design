@@ -2,7 +2,7 @@
 ## Overview - simulated situations
 A business owner approached me seeking assistance in creating a brand-new database for their company. They needed a database built from scratch to efficiently manage their business operations. I gladly accepted the challenge and embarked on the journey of designing a robust and tailored database solution to meet their unique needs.
 
-The business data is currently on an excel file. You can download the Excel file here. A snapshot of the data is seen below. The data has 31 columns and 1000 rows. The Database Management System used for this project is MySQL (MySQL WorkBench).
+The business data is currently on an excel file. The data has 31 columns and 1000 rows. The Database Management System used for this project is MySQL (MySQL WorkBench).
 
 After reviewing the data structure and the steps needed to help the business, I have broken down these steps into the following steps
 - Creating DB and loading data
