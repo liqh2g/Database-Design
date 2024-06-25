@@ -111,7 +111,7 @@ The next step is to design an ER (Entity Relationship) Diagram. ER diagrams use 
 
 Using the Reverse Engineer feature of MySQL, I was able to create the ER Diagram below
 
-![Database Schema](./Database%20ERD%20Model.png)
+![Database Schema](./image_file/Database%20ERD%20Model.png)
 
 The scripts used to alter the table constraints and make modifications can be found [sql_script folder](./SQL%20Script%20for%20database%20project.sql)
 
