@@ -1,30 +1,25 @@
-# Database Design Project: Building A Business Database
----
+# Building A Business Database
 ## Overview - simulated situations
----
 A business owner approached me seeking assistance in creating a brand-new database for their company. They needed a database built from scratch to efficiently manage their business operations. I gladly accepted the challenge and embarked on the journey of designing a robust and tailored database solution to meet their unique needs.
 
 The business data is currently on an excel file. You can download the Excel file here. A snapshot of the data is seen below. The data has 31 columns and 1000 rows. The Database Management System used for this project is MySQL (MySQL WorkBench).
 
 After reviewing the data structure and the steps needed to help the business, I have broken down these steps into the following steps
-- Database Creation & Data Loading
-- Normalization and Denormalization
-- Database Diagram Design
-- Table Alterations
+- Creating DB and loading data
+- Normalization and denormalization
+- Data Modeling
 - Views, Triggers, and Stored Procedures
-- User Management and Privileges
+- User Management and Privileges 
 - Database Backup
 
 
-## Database Creation & Data Loading
----
+## Creating DB and loading data
 Before creating the database, the data on excel was examined and cleaned then saved in a CSV format.
 Cleaning steps involves
 - Ensuring Date types are in "yyyy-mm-dd"
 - Ensuring the right number format is used. Presence of currency symbols or comma separators or any symbols are not allowed
 
-The next step I took was to create a database and load the data into my database. The database name of choice is `db_northwind` 
-The SQL script below was used to create the database, create the table and load the dataset into the table is seen below
+The next step is to create a database and load the data into my database.
 
 ``` sql
 -- Dropping the database if it exists 
@@ -78,15 +73,15 @@ CREATE TABLE TblNorthwind (
 );
 
 -- INSERTING DATA INTO THE CREATED TABLE
-LOAD DATA LOCAL INFILE 'C:/Users/Data Analytics/MySQL DBA/Northwind.csv' 
-          -- table path
+LOAD DATA LOCAL INFILE './Northwind.csv' 
+
 INTO TABLE TblNorthwind
-FIELDS TERMINATED BY ',' -- for a csv file
-ENCLOSED BY '"' -- for the strings
+FIELDS TERMINATED BY ','
+ENCLOSED BY '"'
 LINES TERMINATED BY '\n'
 IGNORE 1 ROWS; -- ignore the headers
 
--- to check the table for the loaded data
+-- Check the table for the loaded data
 SELECT *
 FROM TblNorthwind;
 ```
@@ -106,19 +101,14 @@ After Normalizing the table, The table was sub-divided into the following entiti
 - `Employees`
 
 ## Database Diagram Design and Table Alterations
----
-The next step is to design an ER (Entity Relationship) Diagram. ER diagrams use symbols to represent entities, attributes, and relationships, which help to illustrate the relationships between the entities in the database. 
+The next step is to design an ERD. This diagram use symbols to represent entities, attributes, and relationships, which help to illustrate the relationships between the entities in the database. 
 
 Using the Reverse Engineer feature of MySQL, I was able to create the ER Diagram below
 
 ![Database Schema](./image_file/Database%20ERD%20Model.png)
 
-The scripts used to alter the table constraints and make modifications can be found [sql_script folder](./SQL%20Script%20for%20database%20project.sql)
 
 ## Creating Views, Triggers, and Stored Procedures
----
-
-At this point, the database for the business has been setup. The business owner made three requests.
 
 - Create a view that shows the number of Quantity sold and The Revenue made by Each Employee
 - Create a Trigger on the products table that automatically removes the number of Units of product in stock, after an order has been made
@@ -154,16 +144,11 @@ WHERE unitsInStock < reorderLevel;
 END $$
 DELIMITER ;
 
--- To test if the procedures worked, to check if the product that contains
--- "che" has reached restocked level
-CALL getRestock_products("che");
-
 ```
-
 ## User Management and Privileges
-The business Owner requested I created two users; a Database Administrator and a Data Analyst and grant them some privileges on the database.
+The business Owner requested two users; a DBA and a DA and grant them some privileges on the database.
 
-I Created two Users and give them access to the database. The first user, "TuckerReilly", will be a DBA, and should get full database administrator privileges. The second user, "EllaBrody" is an Analyst and only need read access.
+I created two Users and give them access to the database. The first user, "DBAmember", will be a DBA, and should get full database administrator privileges. The second user, "DAmember" is an Analyst and only need read access.
 
 Designing a database also entails User Management, Granting and Revoking User privileges. This would be done using SQL commands GRANT and REVOKE.
 
@@ -171,10 +156,3 @@ Designing a database also entails User Management, Granting and Revoking User pr
 The primary purpose of backing up a database is to create a duplicate copy of its data and structure at a specific point in time. This process involves making a snapshot of the entire database or selected portions of it, and storing this copy in a secure location.
 
 This database was backed up on a Hard Drive using MySQL local instance Data Export feature.
-
-## Relevance to Business Owners
-Having a database helps the business run smoothly and efficiently. It stores all the important data in one place, making it easy to find what we need whenever we need it. It's like having everything neatly sorted and labeled, so we can access information with just a few clicks.
-
-A database also helps the business make better decisions. It can show us which products are selling well, who our most loyal customers are, and how much money we're making. Armed with this information, we can plan and strategize to grow the business and keep customers happy.
-
-Moreover, a database keeps data safe and secure. It makes sure only the right people can access sensitive information and prevents unauthorized access. Just like we lock our important documents in a safe, a database acts as a digital safe for our business data.
